@@ -9,6 +9,9 @@ layout: default
   </header>
 
   <section class="style4 wrapper container">
+    {% if page.featured_image_path %}
+        <img src="{{ page.featured_image_path }}" />
+    {% endif %}
     {{ content }}
   </section>
     
