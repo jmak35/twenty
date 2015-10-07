@@ -7,8 +7,16 @@ layout: default
         <span class="icon fa-mobile"></span>
         <h2>My <strong>Blog</strong></h2>
     </header>
-    <section class="wrapper style4 container">
-        <ul class="posts">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#paging_container').pajinate({
+                items_per_page : 5
+            });
+        });
+    </script>
+    <section class="wrapper style4 container" id="paging_container">
+        <div class="page_navigation"></div>
+        <ul class="posts content">
           {% for post in site.categories.wods %}
             <li class="wrapper {% if forloop.first %} style2 {% else %} style1 {% endif %}">
               <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
